@@ -1,0 +1,193 @@
+/* พื้นหลัง & ฟอนต์รวม */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* กล่องรวมแอป */
+.app-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+/* หัวข้อใหญ่ */
+.app-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* การ์ดพื้นหลังขาว */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* การ์ดแยกส่วน */
+.auth-card h2,
+.notes-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+
+/* แถว input auth */
+.auth-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ปุ่ม auth */
+.auth-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* แถว note input */
+.note-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* input ทั่วไป */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  flex: 1 1 200px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* สไตล์ปุ่มหลัก */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+/* ปุ่มแต่ละประเภท */
+.btn.primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.45);
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.btn.secondary:hover {
+  background: #d1d5db;
+}
+
+.btn.danger {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.btn.danger:hover {
+  background: #dc2626;
+}
+
+/* ปุ่มตอน disabled */
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+/* สถานะ auth */
+.status-text {
+  font-size: 0.9rem;
+  margin: 4px 0;
+  color: #4b5563;
+}
+
+.current-user {
+  font-size: 0.9rem;
+  color: #2563eb;
+}
+
+/* list note */
+.note-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.note-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+  background: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.note-list li:hover {
+  background: #eff6ff;
+}
+
+/* ปุ่ม delete ใน list */
+.note-list li button {
+  flex-shrink: 0;
+}
+
+/* Responsive สำหรับจอเล็ก */
+@media (max-width: 600px) {
+  .app-wrapper {
+    margin: 20px auto;
+  }
+
+  .auth-row,
+  .note-input-row {
+    flex-direction: column;
+  }
+
+  .auth-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/* สิ้นสุด style.css */

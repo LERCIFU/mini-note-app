@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Note App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <h1 class="app-title">Mini Note App</h1>
+
+    <div class="card auth-card">
+      <h2>Authentication</h2>
+      <div class="auth-row">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+      </div>
+      <div class="auth-buttons">
+        <button id="registerBtn" class="btn secondary">Register</button>
+        <button id="loginBtn" class="btn primary">Login</button>
+        <button id="logoutBtn" class="btn danger" style="display:none;">Logout</button>
+      </div>
+      <p id="authStatus" class="status-text"></p>
+      <p id="currentUser" class="current-user"></p>
+    </div>
+
+    <div id="notesSection" class="card notes-card" style="display:none;">
+      <h2>Your Notes</h2>
+      <div class="note-input-row">
+        <input id="noteInput" type="text" placeholder="Enter a note">
+        <button id="addBtn" class="btn primary">Add Note</button>
+      </div>
+
+      <ul id="noteList" class="note-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+
+</html>
