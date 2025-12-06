@@ -43,6 +43,35 @@ router.post("/", async (req, res) => {
   }
 });
 
+// PUT /notes/:id - แก้ไขโน้ต
+router.put("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const text = req.body.note;
+
+    if (!text) {
+      return res.status(400).json({ error: "Note is required" });
+    }
+
+    const updated = await Note.findOneAndUpdate(
+      { _id: id, userId: req.userId },
+      { text },
+      { new: true }
+    );
+
+    if (!updated) {
+      return res.status(404).json({ error: "Note not found" });
+    }
+
+    const note = { id: updated._id, text: updated.text };
+    res.json({ message: "Note updated", note });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to update note" });
+  }
+});
+
+
 // DELETE /notes/:id
 router.delete("/:id", async (req, res) => {
   try {
